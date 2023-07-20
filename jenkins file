@@ -1,7 +1,10 @@
 pipeline {
     agent any
+    environment{
+    PATH = "/usr/share/maven:$PATH"
+    }
     stages {
-        stage("Hello") {
+        stage("Gitclone") {
             steps {
                 echo 'Hello World'
                 git branch: 'main', url: 'https://github.com/Divakarseevagan/basic.git'
@@ -11,5 +14,5 @@ pipeline {
             steps {
              sh "mvn clean install"
              }
-    } 
+        } 
 }
