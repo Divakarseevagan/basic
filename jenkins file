@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage("Hello") {
             steps {
                 echo 'Hello World'
                 git branch: 'main', url: 'https://github.com/Divakarseevagan/basic.git'
             }
         }
-        stage('Build') {
+        stage("Build") {
             steps {
-             sh "mvn clean install" 
+             sh "mvn clean install"
              }
     } 
 }
